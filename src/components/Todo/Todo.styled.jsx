@@ -13,6 +13,12 @@ export const TodoWrapper = styled.div`
   height: 100%;
 `;
 
+export const EditWrapper = styled.div`
+  position: absolute;
+  top: 70px;
+  right: 0;
+`;
+
 export const DeleteButton = styled.button`
   position: absolute;
   top: 0;
@@ -40,10 +46,6 @@ export const LikeButton = styled.button`
   }
 `;
 export const EditButton = styled.button`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-
   padding: ${({ theme }) => theme.spacing(2.5)};
 
   transition: transform ${({ theme }) => theme.animation.cubicBezier};
@@ -52,4 +54,11 @@ export const EditButton = styled.button`
   &:focus {
     transform: scale(1.05);
   }
+`;
+
+export const EditInput = styled.input`
+  width: 90%;
+  border-style: none;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.dark};
+  background-color: transparent;
 `;
