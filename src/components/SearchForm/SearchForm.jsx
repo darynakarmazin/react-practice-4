@@ -18,6 +18,7 @@ export const SearchForm = () => {
     const todo = {
       id: nanoid(),
       text: query,
+      likes: 0,
     };
     dispatch(addToDo(todo));
     // this.props.onSubmit(query);
