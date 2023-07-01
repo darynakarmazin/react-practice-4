@@ -6,11 +6,11 @@ const toDosSlice = createSlice({
   name: 'todos',
   initialState,
   reducers: {
-    addToDo(state, action) {
-      state.todos = [...state.todos, action.payload];
+    addToDo(state, { payload: newTodo }) {
+      state.todos = [...state.todos, newTodo];
     },
-    decrement(state) {
-      state.value--;
+    deleteToDo(state, { payload: removeId }) {
+      state.todos = state.todos.filter(({ id }) => id !== removeId);
     },
     incrementByAmount(state, action) {
       state.value += action.payload;
@@ -18,5 +18,6 @@ const toDosSlice = createSlice({
   },
 });
 
-export const { addToDo, decrement, incrementByAmount } = toDosSlice.actions;
+export const { addToDo, deleteToDo, incrementByAmount } = toDosSlice.actions;
 export default toDosSlice.reducer;
+export const selectTodos = state => state.todos;

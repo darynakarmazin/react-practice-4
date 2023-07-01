@@ -1,8 +1,9 @@
 import { Grid, GridItem, Todo, Text } from 'components';
 import { useSelector } from 'react-redux';
+import { selectTodos } from 'redux/toDosSlice';
 
 export const ToDoList = () => {
-  const todos = useSelector(state => state.todos);
+  const todos = useSelector(selectTodos);
   return (
     <>
       {todos.length === 0 && (
